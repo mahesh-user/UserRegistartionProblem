@@ -1,6 +1,9 @@
 package com.bridgelabz;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
 public class UserRegistrationTest {
     @Test
     void givenFirstNameWithFirstLetterCapitalMInThreeCharactersReturnsTrue() {
@@ -85,6 +88,13 @@ public class UserRegistrationTest {
     void givenPasswordValidatingWithoutOneSpecialCharacterReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfPasswordRuleTwo("maheshmahesh12234"));
+    }
+    @ParameterizedTest
+    @ValueSource(strings = {"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com",
+            "abc-100@abc.net", "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"})
+    void givenEmailIdsShouldReturnTrue(String str){
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfEmailId(str));
     }
 
 }
