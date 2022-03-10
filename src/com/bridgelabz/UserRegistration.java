@@ -34,4 +34,13 @@ public class UserRegistration {
         return (password.matches(regex));
     }
 
+    public String validationOfAllDetails(UserDetails userDetails) {
+        if ((this.validationOfFirstName(userDetails.firstName)) && (this.validationOfLastName(userDetails.lastName))
+                && (this.validationOfEmailId(userDetails.email)) && (this.validationOfMobileNumber(userDetails.mobile)) &&
+                (this.validationOfPasswordRuleFour(userDetails.password))){
+            return "Happy";
+        }
+        else
+            return "Sad";
+    }
 }
