@@ -5,12 +5,12 @@ public class UserRegistrationTest {
     @Test
     void givenFirstNameWithFirstLetterCapitalMInThreeCharactersReturnsTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertTrue(userRegistration.validationOfFirstName("Kiran"));
+        Assertions.assertTrue(userRegistration.validationOfFirstName("Mahesh"));
     }
 
     @Test
     void givenFirstNameWithOutFirstLetterCapitalMInThreeCharactersReturnsFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        Assertions.assertFalse(userRegistration.validationOfFirstName("kiran"));
+        Assertions.assertFalse(userRegistration.validationOfFirstName("bhavi"));
     }
 }
