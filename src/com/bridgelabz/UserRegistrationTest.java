@@ -13,4 +13,15 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfFirstName("bhavi"));
     }
+    @Test
+    void givenLastWithFirstLetterCapitalMInThreeCharactersReturnsTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfLastName("Mahesh"));
+    }
+
+    @Test
+    void givenLastNameWithOutFirstLetterCapitalMInThreeCharactersReturnsFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertFalse(userRegistration.validationOfLastName("bhavi"));
+    }
 }
