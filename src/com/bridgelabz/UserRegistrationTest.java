@@ -46,4 +46,14 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfMobileNumber("918353696252"));
     }
+    @Test
+    void givenPasswordValidatingWithMinEightCharactersReturnsTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfPasswordRuleOne("mahes123"));
+    }
+    @Test
+    void givenPasswordValidatingWithMinEightCharactersReturnsFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertFalse(userRegistration.validationOfPasswordRuleOne("mah123"));
+    }
 }
