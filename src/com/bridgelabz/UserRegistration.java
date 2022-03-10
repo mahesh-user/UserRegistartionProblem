@@ -21,5 +21,8 @@ public class UserRegistration {
         String regex = "^[A-Za-z0-9.-_@#$%&^*()+:?]{8,}$";
         return (password.matches(regex));
     }
-
+    public boolean validationOfPasswordRuleTwo(String password) {
+        String regex = "^(?=.*[A-Z])[A-Za-z0-9._@#$%&^*()+:?]{8,}$";
+        return (password.matches(regex));
+    }
 }

@@ -56,4 +56,15 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfPasswordRuleOne("mah123"));
     }
+    @Test
+    void givenPasswordValidatingWithAtleastOneCapitalLetterReturnsTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfPasswordRuleTwo("Mahesh123"));
+    }
+    @Test
+    void givenPasswordValidatingWithoutOneCapitalLetterReturnsFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertFalse(userRegistration.validationOfPasswordRuleTwo("mahesh123"));
+    }
+
 }
