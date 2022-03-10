@@ -24,4 +24,15 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         Assertions.assertFalse(userRegistration.validationOfLastName("bhavi"));
     }
+
+    @Test
+    void givenEmailIdValidatingWithRegexReturnsTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertTrue(userRegistration.validationOfEmailId("maheshbabu12@gmail.com"));
+    }
+    @Test
+    void givenEmailIdValidatingWithRegexReturnsFalse(){
+        UserRegistration userRegistration = new UserRegistration();
+        Assertions.assertFalse(userRegistration.validationOfEmailId("maheshbabu12@@gmail.com"));
+    }
 }
