@@ -1,4 +1,8 @@
 package com.bridgelabz;
+// purpose:in this calss to validate user entry
+//            by using lambda functions
+
+//auther:mahesh
 import java.util.regex.Pattern;
 interface Validation{
         String Validate(String regex,String userdtarils);
